@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Gallery</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .pet-box {
+      border-radius: 15px;
+      padding: 15px;
+      color: black;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .dog { background-color: #ffcccb; }
+    .cat { background-color: #ccffcc; }
+    .bird { background-color: #ccccff; }
+    .monkey { background-color: #ffddcc; }
+    .fish { background-color: #cceeff; }
+    .hamster { background-color: #ffe4b5; }
+    .rabbit { background-color: #f0e68c; }
+    .parrot { background-color: #98fb98; }
+    .turtle { background-color: #afeeee; }
+    .snake { background-color: #ffb6c1; }
+    .lizard { background-color: #d3d3d3; }
+    .frog { background-color: #add8e6; }
+    .pet-name {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .pet-box img {
+      width: 220px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body style="background-color: black;">
+
+  <!-- Navbar -->
+  <nav class="navbar sticky-top navbar-expand-lg" style="background-color  :#000000;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white;"><b>Local Wildlife Hub</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" style="color: white;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: white;">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: white;">Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html" style="color: white;">Login</a>
+          </li>
+        </ul>
+        <form class="d-flex ms-3">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-2"></div>
+      <div
+        class="col-xl-6 mt-5"
+        style="text-align: start; font-weight: bolder"
+      >
+        <h1 style="font-weight: bold; color: white;" >
+          Explore the rich diversity of<br> local wildlife, learn<br> about conservation <br>efforts, and discover <br> how you can  <br> contribute to <br> preserving the environment.
+        </h1>
+        <h5 style="font-weight: lighter; text-align: start; color: white">
+          <br><br><br>
+          Our mission is to raise awareness about local wildlife and their habitats. Join us in our efforts to protect endangered species and promote biodiversity.
+        </h5>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="pet-box dog">
+          <div class="pet-name" href = "dog.html"><a style="color: black; text-decoration: none;" href = "dogs.html">Dog</a></div>
+          <img class="img-fluid" src="dog.png" alt="Dog">
+          <div>Friendly and loyal</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box cat">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="cat.html">Cat</a></div>
+          <img class="img-fluid" src="cat.png" alt="Cat">
+          <div>Independent and curious</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box bird">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="#">Bird</a></div>
+          <img class="img-fluid" src="bird.png" alt="Cat">
+          <div>Chirpy and colorful</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box monkey">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href = "#">Monkey</a></div>
+          <img class="img-fluid" src="monkey.png" alt="Cat">
+          <div>Playful and smart</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box fish">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="#">Fish</a></div>
+          <img class="img-fluid" src="fish.png" alt="Cat">
+          <div>Calm and graceful</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box hamster">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="#">Hamster</a></div>
+          <img class="img-fluid" src="chuha.png" alt="Cat">
+          <div>Small and active</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box rabbit">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="#">Rabbit</a></div>
+          <img class="img-fluid" src="rabbit.png" alt="Cat">
+          <div>Cute and fluffy</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box parrot">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="#">Parrot</a></div>
+          <img class="img-fluid" src="parrot.png" alt="Cat">
+          <div>Talkative and bright</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box turtle">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="#">Turtle</a></div>
+          <img class="img-fluid" src="turtle.png" alt="Cat">
+          <div>Slow and steady</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box snake">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="#">Ferrit</a></div>
+          <img class="img-fluid" src="ferrit.png" alt="Cat">
+          <div>Sneaky and silent</div>
+
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box lizard">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="#">Hedgehog</a></div>
+          <img class="img-fluid" src="hedgehog.png" alt="Cat">
+          <div>Quick and agile</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="pet-box frog">
+          <div class="pet-name"><a style="color: black; text-decoration: none;" href="#">Frog</a></div>
+          <img class="img-fluid" src="frog.png" alt="Cat">
+          <div>Jumping and green</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelector('.navbar form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const searchQuery = document.querySelector('.navbar input[type="search"]').value.trim().toLowerCase();
+      
+      const petLinks = {
+        dog: "dogs.html",
+        cat: "cat.html"
+      };
+      
+      if (petLinks[searchQuery]) {
+        window.location.href = petLinks[searchQuery]; 
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

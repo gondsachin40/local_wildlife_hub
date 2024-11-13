@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Animal Showcase</title>
+  <style>
+    .showcase-container {
+      height: 100vh;
+      overflow-y: auto;
+      padding-right: 15px;
+    }
+    .image-container {
+      flex: 0 0 40%;
+      height:200px; 
+      width: 400px;  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .image-container img {
+      width: 100%; 
+      height: 400px;
+      object-fit: cover; 
+    }
+    .info-container {
+      flex: 0 0 60%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 400px;
+    }
+  </style>
+</head>
+<body style="background-color: black;">
+  <nav class="navbar sticky-top navbar-expand-lg" style="background-color: #000000;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white;"><b>Local Wildlife Hub</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" style="color: white;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: white;">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: white;">Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html" style="color: white;">Login</a>
+          </li>
+        </ul>
+        <form class="d-flex ms-3">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid showcase-container">
+    <h1 class="text-center my-4" style="color: white;">Types of Dogs</h1>
+    <div id="animal-cards" class="row">
+      <!-- data push karunga idhar -->
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function getImget(url) {
+      return fetch(url).then(val => val.json()).catch(err => console.log(err))
+    }
+    const dogs = [];
+    fetch('https://dog.ceo/api/breeds/list/all')
+      .then(response => response.json())
+      .then(async data => {
+        const breads = Object.keys(data.message).splice(0, 10)
+        for(let i=0; i<breads.length; i++) {
+          const bread = breads[i];
+          const data2 = {
+            bread: bread,
+            subBread: data.message[bread]
+          }
+          const url = `https://dog.ceo/api/breed/${data2.bread}${data.subBread ? '/'+data.subBread : ''}/images/random/1`
+          await getImget(url).then(val => {
+            dogs.push({
+              ...data2,
+              image: val.message[0],
+              food : "dog food"
+            })
+          }).catch(err => {
+            console.log(err)
+          })
+        }
+        printAnimal(dogs)
+      })
+      .catch(error => console.error("Error fetching data:", error));
+
+      function printAnimal(animals) {
+        const animalCardsContainer = document.getElementById('animal-cards');
+        animals.forEach(animal => {
+            const card = document.createElement('div');
+            card.className = 'col-md-4 mb-4';
+
+            card.innerHTML = `
+              <div class="card" style="background-color: ${animal.color || 'white'}; color: black;">
+                <div class="image-container text-center p-4">
+                  <img src="${animal.image}" alt="${animal.bread}" class="card-img-top" width="100px" height="100px">
+                </div>
+                <div class="info-container p-3">
+                  <h5 class="card-title">${animal.bread}</h5>
+                  <p class="card-text"><strong>Breed:</strong> ${animal.bread}</p>
+                  <p class="card-text"><strong>Food:</strong> ${animal.food}</p>
+                  <p class="card-text"><strong>Characteristics:</strong> ${animal.characteristics || 'N/A'}</p>
+                </div>
+              </div>
+            `;
+
+            animalCardsContainer.appendChild(card);
+          });
+      }
+  </script>
+</body>
+</html>
